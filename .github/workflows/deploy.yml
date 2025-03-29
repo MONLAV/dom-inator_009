@@ -11,6 +11,13 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
+      - name: Set up GitHub Token 🚀
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.name "MONLAV"
+          git config --global user.email "angelina06@ukr.net"
+
       - name: Install and build 🔧
         run: |
           npm install
